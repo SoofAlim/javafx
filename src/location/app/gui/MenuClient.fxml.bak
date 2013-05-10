@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="menuclient" prefHeight="480.0" prefWidth="614.9998779296875" xmlns:fx="http://javafx.com/fxml" fx:controller="location.app.gui.MenuClientController">
+  <children>
+    <TabPane fx:id="tabclient" prefHeight="400.0" prefWidth="614.9998779296875" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Mes Locations">
+          <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+              <children>
+                <TableView id="locationsclient" fx:id="listlocationclient" prefHeight="369.0" prefWidth="614.9998779296875">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Matricule" />
+                    <TableColumn prefWidth="75.0" text="Marque" />
+                    <TableColumn prefWidth="75.0" text="Modèle" />
+                    <TableColumn prefWidth="75.0" text="kilometrage" />
+                    <TableColumn prefWidth="75.0" text="tarif" />
+                    <TableColumn prefWidth="75.0" text="Date debut" />
+                    <TableColumn prefWidth="75.0" text="Date fin" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="voituredispo" text="Réservation">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <AnchorPane prefHeight="369.0" prefWidth="600.0">
+                  <children>
+                    <Button fx:id="reserver" layoutX="490.0" layoutY="300.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="67.0" text="Réserver" />
+                    <TableView fx:id="listevoituredispo" layoutX="113.0" layoutY="27.0" prefHeight="200.0" prefWidth="375.0">
+                      <columns>
+                        <TableColumn prefWidth="75.0" text="Matricule" />
+                        <TableColumn prefWidth="75.0" text="Marque" />
+                        <TableColumn prefWidth="75.0" text="Modele" />
+                        <TableColumn prefWidth="75.0" text="Kilometrage" />
+                        <TableColumn prefWidth="75.0" text="Tarif" />
+                      </columns>
+                    </TableView>
+                    <TextField fx:id="datedebutreservation" layoutX="229.0" layoutY="241.0" prefWidth="143.0" />
+                    <TextField fx:id="datefinreservation" layoutX="229.0" layoutY="293.0" prefWidth="143.0" />
+                    <Label layoutX="127.0" layoutY="247.0" text="Date Début :" />
+                    <Label layoutX="127.0" layoutY="299.0" text="Date Fin :" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Voitures">
+          <content>
+            <AnchorPane prefHeight="400.0" prefWidth="600.0">
+              <children>
+                <TabPane layoutY="-9.0" prefHeight="377.0" prefWidth="615.0" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                    <Tab text="Listes des Voitures">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <TableView fx:id="listevoituresclient" prefHeight="346.0" prefWidth="600.0">
+                              <columns>
+                                <TableColumn prefWidth="75.0" text="Column X" />
+                                <TableColumn prefWidth="75.0" text="Column X" />
+                                <TableColumn prefWidth="75.0" text="Column X" />
+                                <TableColumn prefWidth="75.0" text="Column X" />
+                                <TableColumn prefWidth="75.0" text="Column X" />
+                              </columns>
+                            </TableView>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab text="Proposer Voiture">
+                      <content>
+                        <AnchorPane id="Content" fx:id="propvoiture" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Button id="proposer" fx:id="jButtonSendMail" layoutX="508.0" layoutY="304.0" mnemonicParsing="false" onAction="#jButtonSendMailActionPerformed" text="Proposer" />
+                            <TextField fx:id="jTextMailAddressSender" layoutX="218.0" layoutY="14.0" prefWidth="200.0" />
+                            <TextField fx:id="jTextMailAddressReceiver" layoutX="218.0" layoutY="86.0" prefWidth="200.0" />
+                            <TextField id="jTextmail" fx:id="jTextmailsubject" layoutX="218.0" layoutY="127.0" prefWidth="200.0" />
+                            <TextArea id="jTextarea1" fx:id="jTextArea1" layoutX="218.0" layoutY="155.0" prefWidth="200.0" wrapText="true" />
+                            <Label layoutX="33.0" layoutY="14.0" minHeight="11.0" prefHeight="21.0" prefWidth="138.0" text="Votre adresse email" />
+                            <Label layoutX="33.0" layoutY="45.0" prefWidth="121.0" text="Votre mot de passe" />
+                            <Label layoutX="36.0" layoutY="86.0" prefWidth="88.0" text="Destinataire" />
+                            <Label layoutX="36.0" layoutY="130.0" text="Sujet" />
+                            <Label layoutX="36.0" layoutY="170.0" text="Message " />
+                            <Label id="jLabel" fx:id="jLabelpieceJointe" layoutX="22.0" layoutY="259.0" prefWidth="149.0" />
+                            <Button fx:id="jButton1" layoutX="33.0" layoutY="293.0" mnemonicParsing="false" onAction="#jButton1ActionPerformed" prefWidth="138.0" text="choisir photo voiture" />
+                            <PasswordField fx:id="jPassworSender" layoutX="218.0" layoutY="45.0" prefWidth="200.0" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                  </tabs>
+                </TabPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Button fx:id="quitter" layoutX="495.0" layoutY="445.0" mnemonicParsing="false" text="Quitter" />
+    <Button id="retour" fx:id="decon" layoutX="381.0" layoutY="445.0" mnemonicParsing="false" onAction="#DecoClient" text="Se déconnecter" />
+  </children>
+</AnchorPane>

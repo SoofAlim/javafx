@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="choix" prefHeight="480.0" prefWidth="615.0000999999975" xmlns:fx="http://javafx.com/fxml" fx:controller="location.app.gui.ChoixController">
+  <children>
+    <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+    <Button fx:id="choixclient" layoutX="282.0" layoutY="243.0" mnemonicParsing="false" onAction="#buttonClient" text="Client" />
+    <Button fx:id="choixvisiteur" layoutX="451.0" layoutY="243.0" mnemonicParsing="false" onAction="#buttonVisiteur" text="Visiteur" />
+    <Button fx:id="choixadmin" layoutX="93.0" layoutY="243.0" mnemonicParsing="false" onAction="#buttonAdmin" text="Adminidtrateur" />
+    <Label layoutX="143.0" layoutY="59.0" text="Vous etes :" />
+    <Button fx:id="quitter" layoutX="511.0" layoutY="444.0" mnemonicParsing="false" text="Quitter" />
+  </children>
+</AnchorPane>

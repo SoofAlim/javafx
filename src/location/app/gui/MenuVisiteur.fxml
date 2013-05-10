@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="menuvisiteur" prefHeight="480.0000999999975" prefWidth="616.0" xmlns:fx="http://javafx.com/fxml" fx:controller="location.app.gui.MenuVisiteurController">
+  <children>
+    <TabPane fx:id="espacevisiteur" prefHeight="397.0" prefWidth="615.0000999999975" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Nos Voitures">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="listevoituresvisiteurs" prefHeight="369.0" prefWidth="616.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Column X" />
+                    <TableColumn prefWidth="75.0" text="Column X" />
+                    <TableColumn prefWidth="75.0" text="Column X" />
+                    <TableColumn prefWidth="75.0" text="Column X" />
+                    <TableColumn prefWidth="75.0" text="Column X" />
+                    <TableColumn prefWidth="75.0" text="Column X" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Inscription">
+          <content>
+            <AnchorPane id="Content" fx:id="inscrivisiteur" minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="599.9999000000025">
+              <children>
+                <Label layoutX="69.0" layoutY="60.0" text="Nom :" />
+                <Label layoutX="69.0" layoutY="99.0" text="Prenom :" />
+                <Label layoutX="69.0" layoutY="131.0" text="CIN :" />
+                <Label layoutX="69.0" layoutY="169.0" text="Adresse :" />
+                <Label layoutX="64.0" layoutY="281.0" text="Mot de Passe :" />
+                <Label layoutX="69.0" layoutY="249.0" text="Login :" />
+                <Label layoutX="69.0" layoutY="218.0" text="Email :" />
+                <TextField fx:id="nomvisiteur" layoutX="166.0" layoutY="57.0" prefWidth="200.0" />
+                <TextField fx:id="prenomvisiteur" layoutX="166.0" layoutY="99.0" prefWidth="200.0" />
+                <TextField fx:id="cinvisiteur" layoutX="186.0" layoutY="136.0" prefWidth="200.0" />
+                <TextField fx:id="adressevisiteur" layoutX="196.0" layoutY="166.0" prefWidth="200.0" />
+                <TextField fx:id="emailvisiteur" layoutX="196.0" layoutY="209.0" prefWidth="200.0" />
+                <TextField fx:id="loginvisiteur" layoutX="200.0" layoutY="246.0" prefWidth="200.0" />
+                <Button layoutX="258.0" layoutY="324.0" mnemonicParsing="false" text="S'inscrire" />
+                <PasswordField fx:id="passwordvisiteur" layoutX="200.0" layoutY="289.0" prefWidth="200.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Button fx:id="quitter" layoutX="467.0" layoutY="412.0" mnemonicParsing="false" text="Quitter" />
+    <Button fx:id="retour" layoutX="390.0" layoutY="412.0" mnemonicParsing="false" onAction="#retourChoix" text="Retour" />
+  </children>
+</AnchorPane>

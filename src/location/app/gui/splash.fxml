@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="splash" minWidth="534.0" prefHeight="484.5000999999975" prefWidth="621.000199999995" xmlns:fx="http://javafx.com/fxml" fx:controller="location.app.gui.SplashController">
+  <children>
+    <ImageView fitHeight="466.5000915527344" fitWidth="621.6114331857785" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../images/splash.jpg" preserveRatio="false" smooth="false" />
+      </image>
+    </ImageView>
+    <ProgressBar fx:id="p6" layoutY="453.0" prefHeight="34.4998779296875" prefWidth="622.0" progress="0.0" />
+  </children>
+</AnchorPane>
