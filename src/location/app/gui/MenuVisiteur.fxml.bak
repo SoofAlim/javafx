@@ -14,7 +14,7 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TableView fx:id="listevoituresvisiteurs" prefHeight="369.0" prefWidth="600.0">
+                <TableView fx:id="listevoituresvisiteurs" prefHeight="369.0" prefWidth="616.0">
                   <columns>
                     <TableColumn prefWidth="75.0" text="Column X" />
                     <TableColumn prefWidth="75.0" text="Column X" />

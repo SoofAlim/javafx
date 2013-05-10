@@ -1,12 +1,9 @@
-/* 
-    Document   : Choix
-    Created on : 9 mai 2013, 19:01:24
-    Author     : DELL
-    Description:
-        Purpose of the stylesheet follows.
-*/
-
-root { 
-    display: block;
+#choixadmin,#choixclient,#choixvisiteur,#quitter{
+    
+    -fx-background-color: slateblue; -fx-text-fill: white;
 }
 
+#choix {
+    
+    
+}

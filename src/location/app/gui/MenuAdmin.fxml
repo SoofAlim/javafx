@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.chart.*?>
@@ -118,4 +119,7 @@
     <Button layoutX="530.0" layoutY="445.0" mnemonicParsing="false" text="Quitter" />
     <Button layoutX="407.0" layoutY="445.0" mnemonicParsing="false" onAction="#DecoAdmin" prefWidth="104.0" text="Se déconnecter" />
   </children>
+  <stylesheets>
+    <URL value="@../../../css/MenuAdmin.css" />
+  </stylesheets>
 </AnchorPane>

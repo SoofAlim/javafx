@@ -53,10 +53,10 @@ public class MailConstruction {
         try {
             this.session = Session.getInstance(this.properties, 
                     new javax.mail.Authenticator() {
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(mail.getMailAddressSender(), mail.getPwd());}});
-            this.message = new MimeMessage(this.session);
-            InternetAddress	recipient   = new InternetAddress(mail.getMailAddressRecipient());
+		    protected PasswordAuthentication getPasswordAuthentication() {
+        	    return new PasswordAuthentication(mail.getMailAddressSender(), mail.getPwd());}});
+                    this.message = new MimeMessage(this.session);
+               InternetAddress	recipient   = new InternetAddress(mail.getMailAddressRecipient());
             this.message.setRecipient(Message.RecipientType.TO, recipient);
             this.message.setSubject(mail.getMailSubject());
  

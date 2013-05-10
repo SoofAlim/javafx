@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -110,4 +111,7 @@
     <Button fx:id="quitter" layoutX="495.0" layoutY="445.0" mnemonicParsing="false" text="Quitter" />
     <Button id="retour" fx:id="decon" layoutX="381.0" layoutY="445.0" mnemonicParsing="false" onAction="#DecoClient" text="Se déconnecter" />
   </children>
+  <stylesheets>
+    <URL value="@../../../css/MenuClient.css" />
+  </stylesheets>
 </AnchorPane>

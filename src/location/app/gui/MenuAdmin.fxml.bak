@@ -33,7 +33,7 @@
                           <content>
                             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                               <children>
-                                <PieChart id="PieChart" layoutX="26.0" layoutY="-50.0" />
+                                <PieChart id="PieChart" fx:id="pc" layoutX="26.0" layoutY="-50.0" />
                               </children>
                             </AnchorPane>
                           </content>

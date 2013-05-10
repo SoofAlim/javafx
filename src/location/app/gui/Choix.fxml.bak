@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="choix" prefHeight="506.0" prefWidth="450.0000999999975" xmlns:fx="http://javafx.com/fxml" fx:controller="location.app.gui.ChoixController">
+<AnchorPane id="AnchorPane" fx:id="choix" prefHeight="480.0" prefWidth="615.0000999999975" styleClass="choix" xmlns:fx="http://javafx.com/fxml" fx:controller="location.app.gui.ChoixController">
   <children>
     <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
-    <Button fx:id="choixclient" layoutX="201.0" layoutY="243.0" mnemonicParsing="false" onAction="#buttonClient" text="Client" />
-    <Button fx:id="choixvisiteur" layoutX="323.0" layoutY="243.0" mnemonicParsing="false" onAction="#buttonVisiteur" text="Visiteur" />
-    <Button fx:id="choixadmin" layoutX="42.0" layoutY="243.0" mnemonicParsing="false" onAction="#buttonAdmin" text="Adminidtrateur" />
-    <Label layoutX="143.0" layoutY="59.0" text="Vous etes :" />
-    <Button fx:id="quitter" layoutX="349.0" layoutY="450.0" mnemonicParsing="false" text="Quitter" />
+    <Button fx:id="choixclient" layoutX="241.0" layoutY="230.0" mnemonicParsing="false" onAction="#buttonClient" prefHeight="34.0" prefWidth="67.0" text="Client" />
+    <Button fx:id="choixvisiteur" layoutX="338.0" layoutY="230.0" mnemonicParsing="false" onAction="#buttonVisiteur" prefHeight="34.0" prefWidth="69.0" text="Visiteur" />
+    <Button fx:id="choixadmin" layoutX="110.0" layoutY="230.0" mnemonicParsing="false" onAction="#buttonAdmin" prefHeight="34.0" prefWidth="106.0" text="Adminidtrateur" />
+    <Label fx:id="vousetes" layoutX="241.0" layoutY="104.0" text="Vous etes :" />
+    <Button fx:id="quitter" layoutX="511.0" layoutY="444.0" mnemonicParsing="false" text="Quitter" />
   </children>
+  <stylesheets>
+    <URL value="@../../../css/Choix.css" />
+  </stylesheets>
 </AnchorPane>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -56,4 +57,7 @@
     <Button fx:id="quitter" layoutX="467.0" layoutY="412.0" mnemonicParsing="false" text="Quitter" />
     <Button fx:id="retour" layoutX="390.0" layoutY="412.0" mnemonicParsing="false" onAction="#retourChoix" text="Retour" />
   </children>
+  <stylesheets>
+    <URL value="@../../../css/MenuVisiteur.css" />
+  </stylesheets>
 </AnchorPane>
