@@ -5,7 +5,6 @@
 package location.app.persistence;
 
 import java.util.Objects;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -14,43 +13,44 @@ import javafx.beans.property.SimpleStringProperty;
  *
  * @author DELL
  */
-public class Location {
+public class Reservation {
     
-    private SimpleIntegerProperty idlocation ;
+    private SimpleIntegerProperty idreservation ;
     private SimpleIntegerProperty idclient ;
     private SimpleIntegerProperty idvoiture;
     private SimpleStringProperty datedebut;
     private SimpleStringProperty datefin;
-    private SimpleFloatProperty tarif ;
-   
+    
+    
     //constructeurs par defaut
-    public Location() {
+    public Reservation() {
     }
     
     //constructeur paramétré
 
-    public Location(int idlocation,int idclient, int idvoiture, String datedebut, String datefin, float tarif) {
-        this.idlocation = new SimpleIntegerProperty(idlocation);
+    public Reservation(int idreservation,int idclient, int idvoiture, String datedebut, String datefin, float tarif) {
+        this.idreservation = new SimpleIntegerProperty(idreservation);
         this.idclient = new SimpleIntegerProperty(idclient);
         this.idvoiture = new SimpleIntegerProperty(idvoiture);
         this.datedebut = new SimpleStringProperty(datedebut);
         this.datefin = new SimpleStringProperty(datefin);
-        this.tarif = new SimpleFloatProperty(tarif);
-    }
 
+    }
+    
     //xxxxxxxx
-     public SimpleIntegerProperty Idlocation_Property(){return idlocation;}
+     public SimpleIntegerProperty Idreservation_Property(){return idreservation;}
      public SimpleIntegerProperty Idclient_Property(){return idclient;}
      public SimpleIntegerProperty Idvoiture_Property(){return idvoiture;}
      public SimpleStringProperty Datedebut_Property(){return datedebut;} 
      public SimpleStringProperty Datefin_Property(){return datefin;}
-     public SimpleFloatProperty Tarif_Property(){return tarif;}
+   
+     
      
     //getters
-    public SimpleIntegerProperty  getIdlocation() {
-        return idlocation;
+    public SimpleIntegerProperty  getIdreservation() {
+        return idreservation;
     }
-    public SimpleIntegerProperty  getIdclient() {
+    public SimpleIntegerProperty  getIdClient() {
         return idclient;
     }
 
@@ -66,17 +66,13 @@ public class Location {
         return datefin;
     }
 
-    public SimpleFloatProperty getTarif() {
-        return tarif;
-    }
-
     //setters
-    public void setIdlocation(int idlocation) {
-        this.idlocation.setValue(idlocation); 
+    public void setIdreservation(int idreservation) {
+        this.idreservation.setValue(idreservation); 
     }
 
-    public void setIdclient(int idcllient) {
-        this.idclient .setValue(idcllient); 
+    public void setIdadmin(int idadmin) {
+        this.idclient .setValue(idadmin); 
     }
     public void setIdvoiture(int idvoiture) {
         this.idvoiture.setValue(idvoiture);
@@ -90,13 +86,8 @@ public class Location {
         this.datefin.setValue(datefin);
     }
 
-    public void setTarif(float tarif) {
-        this.tarif.setValue(tarif);
-    }
-
-  
-
     //equals
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -105,11 +96,14 @@ public class Location {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Location other = (Location) obj;
-        if (this.idclient != other.idclient) {
+        final Reservation other = (Reservation) obj;
+        if (!Objects.equals(this.idreservation, other.idreservation)) {
             return false;
         }
-        if (this.idvoiture != other.idvoiture) {
+        if (!Objects.equals(this.idclient, other.idclient)) {
+            return false;
+        }
+        if (!Objects.equals(this.idvoiture, other.idvoiture)) {
             return false;
         }
         if (!Objects.equals(this.datedebut, other.datedebut)) {
@@ -118,17 +112,20 @@ public class Location {
         if (!Objects.equals(this.datefin, other.datefin)) {
             return false;
         }
-        if (!Objects.equals(this.tarif, other.tarif)) {
-            return false;
-        }
         return true;
     }
 
-    
-  
     //tostring
+    
     @Override
     public String toString() {
-        return "Location{" + "idclient=" + idclient + ", idoiture=" + idvoiture + ", datedebut=" + datedebut + ", datefin=" + datefin + ", tarif=" + tarif + '}';
+        return "Reservation{" + "idreservation=" + idreservation + ", idclient=" + idclient + ", idvoiture=" + idvoiture + ", datedebut=" + datedebut + ", datefin=" + datefin + '}';
     }
+    
+    
 }
+
+    
+    
+    
+

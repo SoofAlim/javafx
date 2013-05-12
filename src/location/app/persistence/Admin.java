@@ -14,6 +14,7 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Admin {
 
+    //attribut
     private SimpleIntegerProperty idadmin ;
     private  SimpleStringProperty nom;
     private  SimpleStringProperty prenom;
@@ -21,13 +22,91 @@ public class Admin {
     private  SimpleStringProperty mail;
     private  SimpleStringProperty login;
     private  SimpleStringProperty password;
-
-    @Override
-    public String toString() {
-        return "Admin{" + "idadmin=" + idadmin + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", mail=" + mail + ", login=" + login + ", password=" + password + '}';
+    // constructeurs par defaut
+    
+    public Admin() {
+    }
+    
+    //constructeur paramétré
+     public Admin(int idadmin, String nom, String prenom, String adresse, String mail, String login, String password) {
+        this.idadmin = new SimpleIntegerProperty(idadmin) ;
+        this.nom = new SimpleStringProperty (nom);
+        this.prenom = new SimpleStringProperty(prenom);
+        this.adresse = new SimpleStringProperty(adresse);
+        this.mail =new SimpleStringProperty (mail);
+        this.login = new SimpleStringProperty(login);
+        this.password = new SimpleStringProperty(password);
+    }
+     
+     // xxxxxxxx
+      public SimpleIntegerProperty Idadmin_Property(){return idadmin;}
+     public SimpleStringProperty Nom_Property(){return nom;}
+     public SimpleStringProperty Prenom_Property(){return prenom;}
+     public SimpleStringProperty Adresse_Property(){return adresse;}
+     public SimpleStringProperty Mail_Property(){return mail;}
+     public SimpleStringProperty Login_Property(){return login;}
+     public SimpleStringProperty Password_Property(){return password;}
+     
+     // getters
+    public SimpleIntegerProperty getIdadmin() {
+        return idadmin;
     }
 
-  
+    public SimpleStringProperty getNom() {
+        return nom;
+    }
+
+    public SimpleStringProperty getPrenom() {
+        return prenom;
+    }
+
+    public SimpleStringProperty getAdresse() {
+        return adresse;
+    }
+
+    public SimpleStringProperty getMail() {
+        return mail;
+    }
+
+    public SimpleStringProperty getLogin() {
+        return login;
+    }
+
+    public SimpleStringProperty getPassword() {
+        return password;
+    }
+
+    
+    //setters
+    public void setIdadmin(int idadmin) {
+        this.idadmin.setValue(idadmin);
+    }
+
+    public void setNom(String nom) {
+        this.nom.setValue(nom);
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom.setValue(prenom); 
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse.setValue(adresse);
+    }
+
+    public void setMail(String mail) {
+        this.mail.setValue(mail);
+    }
+
+    public void setLogin(String login) {
+        this.login.setValue(login);
+    }
+
+    public void setPassword(String password) {
+        this.password.setValue(password);
+    }
+
+  //equals
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -60,75 +139,17 @@ public class Admin {
         }
         return true;
     }
-
-    public void setIdadmin(int idadmin) {
-        this.idadmin.setValue(idadmin);
-    }
-
-    public void setNom(String nom) {
-        this.nom.setValue(nom);
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom.setValue(prenom); 
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse.setValue(adresse);
-    }
-
-    public void setMail(String mail) {
-        this.mail.setValue(mail);
-    }
-
-    public void setLogin(String login) {
-        this.login.setValue(login);
-    }
-
-    public void setPassword(String password) {
-        this.password.setValue(password);
-    }
-
-    public Admin(int idadmin, String nom, String prenom, String adresse, String mail, String login, String password) {
-        this.idadmin = new SimpleIntegerProperty(idadmin) ;
-        this.nom = new SimpleStringProperty (nom);
-        this.prenom = new SimpleStringProperty(prenom);
-        this.adresse = new SimpleStringProperty(adresse);
-        this.mail =new SimpleStringProperty (mail);
-        this.login = new SimpleStringProperty(login);
-        this.password = new SimpleStringProperty(password);
-    }
-
-    public Admin() {
-    }
-
-    public SimpleIntegerProperty getIdadmin() {
-        return idadmin;
-    }
-
-    public SimpleStringProperty getNom() {
-        return nom;
-    }
-
-    public SimpleStringProperty getPrenom() {
-        return prenom;
-    }
-
-    public SimpleStringProperty getAdresse() {
-        return adresse;
-    }
-
-    public SimpleStringProperty getMail() {
-        return mail;
-    }
-
-    public SimpleStringProperty getLogin() {
-        return login;
-    }
-
-    public SimpleStringProperty getPassword() {
-        return password;
+    //to string
+    
+    @Override
+    public String toString() {
+        return "Admin{" + "idadmin=" + idadmin + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", mail=" + mail + ", login=" + login + ", password=" + password + '}';
     }
 
    
+
+    
+   
+
+    
 }

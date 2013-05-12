@@ -14,7 +14,7 @@ import javafx.beans.property.SimpleStringProperty;
  * @author HP
  */
 public class Client {
-    
+    //attribut
     private SimpleIntegerProperty idclient ;
     private SimpleStringProperty nom ;
     private SimpleStringProperty  prenom;
@@ -23,7 +23,12 @@ public class Client {
     private SimpleIntegerProperty  cin;
     private SimpleStringProperty login;
     private SimpleStringProperty password;
-
+    // constructeurs par defaut
+    
+    public Client() {
+    }
+    
+    //constructeur parametré
     public Client(int idclient, String nom, String prenom, String adresse, String mail, int cin, String login, String password) {
         this.idclient = new SimpleIntegerProperty(idclient);
         this.nom = new SimpleStringProperty(nom);
@@ -34,16 +39,17 @@ public class Client {
         this.login = new SimpleStringProperty(login);
         this.password = new SimpleStringProperty(password);
     }
-    
-    public SimpleIntegerProperty Idclient_Property(){return idclient;}
-     public SimpleStringProperty Nom_Property(){return nom;}
-      public SimpleStringProperty Prenom_Property(){return prenom;}
+     // xxxxxx
+       public SimpleIntegerProperty Idclient_Property(){return idclient;}
+       public SimpleStringProperty Nom_Property(){return nom;}
+       public SimpleStringProperty Prenom_Property(){return prenom;}
        public SimpleStringProperty Adresse_Property(){return adresse;}
-        public SimpleStringProperty Mail_Property(){return mail;}
-         public SimpleIntegerProperty Cin_Property(){return cin;}
-          public SimpleStringProperty Login_Property(){return login;}
-           public SimpleStringProperty Password_Property(){return password;}
+       public SimpleStringProperty Mail_Property(){return mail;}
+       public SimpleIntegerProperty Cin_Property(){return cin;}
+       public SimpleStringProperty Login_Property(){return login;}
+       public SimpleStringProperty Password_Property(){return password;}
 
+       // Getters
     public SimpleIntegerProperty getIdclient() {
         return idclient;
     }
@@ -76,6 +82,8 @@ public class Client {
         return password;
     }
 
+    
+    // Setters
     public void setIdclient(int idclient) {
         this.idclient.setValue(idclient);
     }
@@ -109,7 +117,7 @@ public class Client {
     }
 
    
-
+//equals
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -145,7 +153,8 @@ public class Client {
         }
         return true;
     }
-
+        
+    // tostring
     @Override
     public String toString() {
         return "Client{" + "idclient=" + idclient + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", mail=" + mail + ", cin=" + cin + ", login=" + login + ", password=" + password + '}';
@@ -153,8 +162,7 @@ public class Client {
     
     
 
-    public Client() {
-    }
+    
     
     
 }

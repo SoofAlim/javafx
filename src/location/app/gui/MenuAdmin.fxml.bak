@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.chart.*?>
@@ -95,14 +96,25 @@
                   <children>
                     <TabPane layoutY="26.0" prefHeight="402.0" prefWidth="614.0" tabClosingPolicy="UNAVAILABLE">
                       <tabs>
-                        <Tab text="Nouvelle Location">
-                          <content>
-                            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                          </content>
-                        </Tab>
                         <Tab text="Liste des Locations">
                           <content>
-                            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                <TableView layoutX="118.0" layoutY="86.0" prefHeight="200.0" prefWidth="375.0">
+                                  <columns>
+                                    <TableColumn prefWidth="75.0" text="Id Client" />
+                                    <TableColumn prefWidth="75.0" text="Id Voiture" />
+                                    <TableColumn prefWidth="75.0" text="Date Debut" />
+                                    <TableColumn prefWidth="75.0" text="Date Fin" />
+                                    <TableColumn prefWidth="75.0" text="Tarif" />
+                                  </columns>
+                                </TableView>
+                                <Button layoutX="493.0" layoutY="23.0" mnemonicParsing="false" text="Rechercher" />
+                                <Button layoutX="351.0" layoutY="313.0" mnemonicParsing="false" text="Supprimer" />
+                                <Button layoutX="446.0" layoutY="313.0" mnemonicParsing="false" text="Modifier" />
+                                <TextField layoutX="339.0" layoutY="23.0" prefWidth="140.0" />
+                              </children>
+                            </AnchorPane>
                           </content>
                         </Tab>
                       </tabs>
@@ -113,9 +125,31 @@
             </AnchorPane>
           </content>
         </Tab>
+        <Tab text="Réservations">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Button fx:id="acceptreservation" layoutX="410.0" layoutY="310.0" mnemonicParsing="false" text="Accepter Réservation" />
+                <TextField fx:id="tarif" layoutX="170.0" layoutY="273.0" prefWidth="200.0" />
+                <Label layoutX="81.0" layoutY="273.0" text="Tarif" />
+                <TableView fx:id="listreservation" layoutX="135.0" layoutY="53.0" prefHeight="200.0" prefWidth="302.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Id Cient" />
+                    <TableColumn prefWidth="75.0" text="Id Voiture" />
+                    <TableColumn prefWidth="75.0" text="Date Debut" />
+                    <TableColumn prefWidth="75.0" text="Date Fin" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
       </tabs>
     </TabPane>
     <Button layoutX="530.0" layoutY="445.0" mnemonicParsing="false" text="Quitter" />
     <Button layoutX="407.0" layoutY="445.0" mnemonicParsing="false" onAction="#DecoAdmin" prefWidth="104.0" text="Se déconnecter" />
   </children>
+  <stylesheets>
+    <URL value="@../../../css/MenuAdmin.css" />
+  </stylesheets>
 </AnchorPane>
