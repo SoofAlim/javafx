@@ -33,14 +33,15 @@ public class Voiture {
     }
     
     //constructeurs paramétré
-    public Voiture(int idvoiture ,String matricule, String modele, String marque, int kilometrage, String couleur, float tarif) {
+    public Voiture(int idvoiture ,String matricule, String marque, String modele, int kilometrage,float tarif,String couleur,boolean etat) {
         this.idvoiture = new SimpleIntegerProperty(idvoiture);
         this.matricule = new SimpleStringProperty (matricule);
-        this.modele = new SimpleStringProperty(modele);
         this.marque =new SimpleStringProperty (marque);
-        this.kilometrage = new SimpleIntegerProperty (kilometrage);
-        this.couleur = new SimpleStringProperty (couleur);
+        this.modele = new SimpleStringProperty(modele);
+        this.kilometrage = new SimpleIntegerProperty (kilometrage); 
         this.tarif =new SimpleFloatProperty (tarif);
+        this.couleur = new SimpleStringProperty (couleur);
+        this.etat = new SimpleBooleanProperty (etat);
         
     }
 

@@ -56,13 +56,13 @@ public class LocationDAO extends IDAO<Location> {
 
     @Override
     public void create(Location location) {
-        if (find(location.getIdClient().getValue())== null){
+        if (find(location.getIdclient().getValue())== null){
             
             String sql = "INSERT INTO VOITURE(IDCLIENT, IDVOITURE,DATEDEBUT,DATEFIN,DATEDEBUT, TARIF) VALUES (?,?,?,?,?,?)";
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setInt(1, location.getIdClient().getValue());
+                preparedStatement.setInt(1, location.getIdclient().getValue());
                 preparedStatement.setInt(2, location.getIdvoiture().getValue());
                 preparedStatement.setString(3, location.getDatedebut().getValue());
                   preparedStatement.setString(4, location.getDatefin().getValue());
@@ -87,7 +87,7 @@ public class LocationDAO extends IDAO<Location> {
 
     @Override
     public void update(Location location) {
-         if (find(location.getIdClient().getValue())!= null) { 
+         if (find(location.getIdclient().getValue())!= null) { 
 
             String sql = "UPDATE LOCATION SET IDCLIENT=?, IDVOITURE=? , DATEDEBUT=? , DATEFIN=? , TARIF=? WHERE IDCLIENT=?";
             PreparedStatement preparedStatement = null;

@@ -22,7 +22,25 @@
                       <tabs>
                         <Tab text="Nouvelle Voiture">
                           <content>
-                            <AnchorPane id="Content" fx:id="nouvellevoitureadmin" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="614.0" />
+                            <AnchorPane id="Content" fx:id="nouvellevoitureadmin" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="614.0">
+                              <children>
+                                <Button layoutX="245.0" layoutY="322.0" mnemonicParsing="false" text="Button" />
+                                <TextField layoutX="173.0" layoutY="30.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="64.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="99.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="142.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="182.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="222.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="265.0" prefWidth="200.0" />
+                                <Label layoutX="46.0" layoutY="36.0" text="Matricule :" />
+                                <Label layoutX="46.0" layoutY="67.0" text="Marque :" />
+                                <Label layoutX="50.0" layoutY="94.0" prefHeight="21.000091552734375" text="Modele :" />
+                                <Label layoutX="56.0" layoutY="142.0" text="Kilometrage :" />
+                                <Label layoutX="66.0" layoutY="188.0" text="Tarif :" />
+                                <Label layoutX="74.0" layoutY="236.0" text="Couleur :" />
+                                <Label layoutX="80.0" layoutY="276.0" text="Etat :" />
+                              </children>
+                            </AnchorPane>
                           </content>
                         </Tab>
                         <Tab text="Liste des Voitures">
@@ -140,6 +158,7 @@
                     <TableColumn prefWidth="75.0" text="Date Fin" />
                   </columns>
                 </TableView>
+                <Button fx:id="suppreservation" layoutX="476.0" layoutY="132.0" mnemonicParsing="false" text="Refuser" />
               </children>
             </AnchorPane>
           </content>

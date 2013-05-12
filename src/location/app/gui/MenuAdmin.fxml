@@ -22,7 +22,25 @@
                       <tabs>
                         <Tab text="Nouvelle Voiture">
                           <content>
-                            <AnchorPane id="Content" fx:id="nouvellevoitureadmin" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="614.0" />
+                            <AnchorPane id="Content" fx:id="nouvellevoitureadmin" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="614.0">
+                              <children>
+                                <Button layoutX="245.0" layoutY="322.0" mnemonicParsing="false" text="Button" />
+                                <TextField layoutX="173.0" layoutY="30.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="64.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="99.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="142.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="182.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="222.0" prefWidth="200.0" />
+                                <TextField layoutX="173.0" layoutY="265.0" prefWidth="200.0" />
+                                <Label layoutX="37.0" layoutY="36.0" text="Matricule :" />
+                                <Label layoutX="37.0" layoutY="67.0" text="Marque :" />
+                                <Label layoutX="37.0" layoutY="94.0" prefHeight="21.000091552734375" text="Modele :" />
+                                <Label layoutX="37.0" layoutY="139.0" text="Kilometrage :" />
+                                <Label layoutX="37.0" layoutY="185.0" text="Tarif :" />
+                                <Label layoutX="37.0" layoutY="231.0" text="Couleur :" />
+                                <Label layoutX="37.0" layoutY="271.0" text="Etat :" />
+                              </children>
+                            </AnchorPane>
                           </content>
                         </Tab>
                         <Tab text="Liste des Voitures">
