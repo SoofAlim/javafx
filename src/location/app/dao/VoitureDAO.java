@@ -60,7 +60,7 @@ public class VoitureDAO extends IDAO<Voiture> {
     @Override
     public void create(Voiture voiture) {
          
-            
+             if (find(voiture.getIdvoiture().getValue()) == null) { 
             String sql = "INSERT INTO VOITURE(IDVOITURE ,MATRICULE, MARQUE, MODELE  , KILOMETRAGE , TARIF,COULEUR,ETAT) VALUES (NULL,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = null;
             try {
@@ -86,14 +86,14 @@ public class VoitureDAO extends IDAO<Voiture> {
                 }
             }
         }    
-
+    }
  
     
 
     @Override
     public void update(Voiture voiture) {
         
-
+ if (find(voiture.getIdvoiture().getValue()) == null) { 
             String sql = "UPDATE VOITURE SET MATRICULE=?,MARQUE=?, MODELE=? , COULEUR=? , KILOMETRAGE=? , TARIF=?,COULEUR=?,ETAT=? WHERE IDVOITURE=?";
             PreparedStatement preparedStatement = null;
             try {
@@ -119,11 +119,11 @@ public class VoitureDAO extends IDAO<Voiture> {
                 }
             }
         }
-    
+    }
 
     @Override
     public void delete(Voiture voiture) {
-       
+        if (find(voiture.getIdvoiture().getValue()) == null) { 
 
             String sql = "DELETE FROM VOITURE WHERE MATRICULE=?";
             PreparedStatement preparedStatement = null;
@@ -146,6 +146,7 @@ public class VoitureDAO extends IDAO<Voiture> {
             }
 
         }
+    }
     
 
     @Override

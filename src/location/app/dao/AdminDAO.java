@@ -57,17 +57,17 @@ public class AdminDAO extends IDAO<Admin> {
     public void create(Admin admin) {
         if (find(admin.getIdadmin().getValue()) == null) { 
             
-            String sql = "INSERT INTO ADMIN(IDADMIN, NOM, PRENOM ,ADRESSE , MAIL , LOGIN , PASSWORD) VALUES (?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO ADMIN(IDADMIN, NOM, PRENOM ,ADRESSE , MAIL , LOGIN , PASSWORD) VALUES (NULL,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setInt(1, admin.getIdadmin().getValue());
                 preparedStatement.setString(2, admin.getNom().getValue());
                 preparedStatement.setString(3, admin.getPrenom().getValue());
-                  preparedStatement.setString(4, admin.getAdresse().getValue());
-                    preparedStatement.setString(5, admin.getMail().getValue());
-                     preparedStatement.setString(6, admin.getLogin().getValue());
-                      preparedStatement.setString(7, admin.getPassword().getValue());
+                preparedStatement.setString(4, admin.getAdresse().getValue());
+                preparedStatement.setString(5, admin.getMail().getValue());
+                preparedStatement.setString(6, admin.getLogin().getValue());
+                preparedStatement.setString(7, admin.getPassword().getValue());
                 preparedStatement.executeUpdate(); 
                 System.out.println(sql);
             } catch (SQLException ex) {
@@ -94,11 +94,11 @@ public class AdminDAO extends IDAO<Admin> {
             try {
                 preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, admin.getNom().getValue());
-                    preparedStatement.setString(2, admin.getPrenom().getValue());
+                preparedStatement.setString(2, admin.getPrenom().getValue());
                 preparedStatement.setString(3, admin.getAdresse().getValue());
-                   preparedStatement.setString(4, admin.getMail().getValue());
-                   preparedStatement.setString(5, admin.getLogin().getValue());
-                   preparedStatement.setString(6, admin.getPassword().getValue());
+                preparedStatement.setString(4, admin.getMail().getValue());
+                preparedStatement.setString(5, admin.getLogin().getValue());
+                preparedStatement.setString(6, admin.getPassword().getValue());
                 preparedStatement.setInt(7, admin.getIdadmin().getValue());
                 preparedStatement.executeUpdate();
                 System.out.println(sql);

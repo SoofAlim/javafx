@@ -58,18 +58,19 @@ public class ClientDAO extends IDAO<Client> {
     public void create(Client client) {
         if (find(client.getIdclient().getValue()) == null) { 
             
-            String sql = "INSERT INTO CLIENT(IDCLIENT, NOM, PRENOM ,ADRESSE , MAIL, CIN ,LOGIN , PASSWORD) VALUES (?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO CLIENT(IDCLIENT, NOM, PRENOM ,ADRESSE , MAIL, CIN ,LOGIN , PASSWORD) VALUES (NULL,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setInt(1, client.getIdclient().getValue());
                 preparedStatement.setString(2, client.getNom().getValue());
                 preparedStatement.setString(3, client.getAdresse().getValue());
-                  preparedStatement.setString(4, client.getAdresse().getValue());
-                    preparedStatement.setString(5, client.getAdresse().getValue());
-                     preparedStatement.setInt(6, client.getCin().getValue());
-                      preparedStatement.setString(7, client.getPassword().getValue());
-                       preparedStatement.setString(8, client.getLogin().getValue());
+                preparedStatement.setString(4, client.getAdresse().getValue());
+                preparedStatement.setString(5, client.getMail().getValue());
+                preparedStatement.setInt(6, client.getCin().getValue());
+                preparedStatement.setString(7, client.getLogin().getValue());
+                preparedStatement.setString(8, client.getPassword().getValue());
+                
                 preparedStatement.executeUpdate(); 
                 System.out.println(sql);
             } catch (SQLException ex) {
@@ -91,18 +92,19 @@ public class ClientDAO extends IDAO<Client> {
     public void update(Client client) {
         if (find(client.getIdclient().getValue()) != null) { 
 
-            String sql = "UPDATE CLIENT SET NOM=?, PRENOM=? , ADRESSE=? , MAIL=? , CIN=? ,LOGIN=? , PASSWORD=? WHERE IDADMIN=?";
+            String sql = "UPDATE CLIENT SET NOM=?, PRENOM=? , ADRESSE=? , MAIL=? , CIN=? ,LOGIN=? , PASSWORD=? WHERE IDCLIENT=?";
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setString(1, client.getNom().getValue());
-                    preparedStatement.setString(2, client.getPrenom().getValue());
-                preparedStatement.setString(3, client.getAdresse().getValue());
-                   preparedStatement.setString(4, client.getMail().getValue());
-                     preparedStatement.setInt(5, client.getCin().getValue());
-                         preparedStatement.setString(6, client.getLogin().getValue());
-                             preparedStatement.setString(7, client.getPassword().getValue());
-                preparedStatement.setInt(8, client.getIdclient().getValue());
+                preparedStatement.setInt(1, client.getIdclient().getValue());
+                preparedStatement.setString(2, client.getNom().getValue());
+                preparedStatement.setString(3, client.getPrenom().getValue());
+                preparedStatement.setString(4, client.getAdresse().getValue());
+                preparedStatement.setString(5, client.getMail().getValue());
+                preparedStatement.setInt(6, client.getCin().getValue());
+                preparedStatement.setString(7, client.getLogin().getValue());
+                preparedStatement.setString(8, client.getPassword().getValue());
+             
                    
                 preparedStatement.executeUpdate();
                 System.out.println(sql);
@@ -164,7 +166,7 @@ public class ClientDAO extends IDAO<Client> {
 
 
         } catch (SQLException ex) {
-            Logger.getLogger(AdminDAO.class.getName()).log(Level.SEVERE, "find all employees failed", ex);
+            Logger.getLogger(ClientDAO.class.getName()).log(Level.SEVERE, "find all employees failed", ex);
         } finally {            
             try {
                 if (resultSet != null) {
@@ -174,7 +176,7 @@ public class ClientDAO extends IDAO<Client> {
                     statement.close();
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AdminDAO.class.getName()).log(Level.SEVERE, "free resourses failed", ex);
+                Logger.getLogger(ClientDAO.class.getName()).log(Level.SEVERE, "free resourses failed", ex);
             }
         }
         return list;

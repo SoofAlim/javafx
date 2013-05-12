@@ -22,7 +22,7 @@ import location.app.persistence.Voiture;
 public class LocationDAO extends IDAO<Location> {
 
     @Override
-    public Location find(int idclient) {
+    public Location find(int idlocation) {
         String sql = "SELECT * FROM location WHERE idlocation=?";
         Location found = null; 
         PreparedStatement preparedStatement = null;
@@ -30,11 +30,11 @@ public class LocationDAO extends IDAO<Location> {
 
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, idclient);
+            preparedStatement.setInt(1, idlocation);
             resultSet = preparedStatement.executeQuery(); 
             System.out.println(sql);
             if (resultSet.next()) {
-                found = new Location(resultSet.getInt("IDCLIENT"), resultSet.getInt("IDVOITURE"), resultSet.getString("DATEDEBUT"),resultSet.getString("DATEFIN"),resultSet.getFloat("TARIF"));
+                found = new Location(resultSet.getInt("IDLOCATION"),resultSet.getInt("IDCLIENT"), resultSet.getInt("IDVOITURE"), resultSet.getString("DATEDEBUT"),resultSet.getString("DATEFIN"),resultSet.getFloat("TARIF"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(LocationDAO.class.getName()).log(Level.SEVERE, "find departement failed", ex);
@@ -56,17 +56,18 @@ public class LocationDAO extends IDAO<Location> {
 
     @Override
     public void create(Location location) {
-        if (find(location.getIdclient().getValue())== null){
+        if (find(location.getIdlocation().getValue())== null){
             
-            String sql = "INSERT INTO VOITURE(IDCLIENT, IDVOITURE,DATEDEBUT,DATEFIN,DATEDEBUT, TARIF) VALUES (?,?,?,?,?,?)";
+            String sql = "INSERT INTO VOITURE(IDLOCATION,IDCLIENT, IDVOITURE,DATEDEBUT,DATEFIN, TARIF) VALUES (NULL,?,?,?,?,?)";
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setInt(1, location.getIdclient().getValue());
-                preparedStatement.setInt(2, location.getIdvoiture().getValue());
-                preparedStatement.setString(3, location.getDatedebut().getValue());
-                  preparedStatement.setString(4, location.getDatefin().getValue());
-                    preparedStatement.setFloat(5, location.getTarif().getValue());
+                preparedStatement.setInt(1, location.getIdlocation().getValue());
+                preparedStatement.setInt(2, location.getIdclient().getValue());
+                preparedStatement.setInt(3, location.getIdvoiture().getValue());
+                preparedStatement.setString(4, location.getDatedebut().getValue());
+                preparedStatement.setString(5, location.getDatefin().getValue());
+                preparedStatement.setFloat(6, location.getTarif().getValue());
                    
                 preparedStatement.executeUpdate(); 
                 System.out.println(sql);
@@ -78,7 +79,7 @@ public class LocationDAO extends IDAO<Location> {
                         preparedStatement.close();
                     }
                 } catch (SQLException ex) {
-                   Logger.getLogger(Voiture.class.getName()).log(Level.SEVERE, "free resourses failed", ex);
+                   Logger.getLogger(LocationDAO.class.getName()).log(Level.SEVERE, "free resourses failed", ex);
                 }
             }
            
@@ -87,18 +88,19 @@ public class LocationDAO extends IDAO<Location> {
 
     @Override
     public void update(Location location) {
-         if (find(location.getIdclient().getValue())!= null) { 
+         if (find(location.getIdlocation().getValue())!= null) { 
 
-            String sql = "UPDATE LOCATION SET IDCLIENT=?, IDVOITURE=? , DATEDEBUT=? , DATEFIN=? , TARIF=? WHERE IDCLIENT=?";
+            String sql = "UPDATE LOCATION SET IDCLIENT=?, IDVOITURE=? , DATEDEBUT=? , DATEFIN=? , TARIF=? WHERE IDLOCATION=?";
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setInt(1, location.getIdClient().getValue());
-                    preparedStatement.setInt(2, location.getIdvoiture().getValue());
-                preparedStatement.setString(3, location.getDatedebut().getValue());
-                   preparedStatement.setString(4, location.getDatefin().getValue());
-                preparedStatement.setFloat(5, location.getTarif().getValue());
-
+                preparedStatement.setInt(1, location.getIdlocation().getValue());
+                preparedStatement.setInt(2, location.getIdclient().getValue());
+                preparedStatement.setInt(3, location.getIdvoiture().getValue());
+                preparedStatement.setString(4, location.getDatedebut().getValue());
+                preparedStatement.setString(5, location.getDatefin().getValue());
+                preparedStatement.setFloat(6, location.getTarif().getValue());
+                
                 preparedStatement.executeUpdate();
                 System.out.println(sql);
             } catch (SQLException ex) {
@@ -115,15 +117,66 @@ public class LocationDAO extends IDAO<Location> {
         }
     }
 
-    @Override
+     @Override
     public void delete(Location location) {
-        
+        if (find(location.getIdlocation().getValue()) == null) { 
+
+            String sql = "DELETE FROM LOCATION WHERE IDLOCATION=?";
+            PreparedStatement preparedStatement = null;
+            try {
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, location.getIdlocation().getValue());
+                preparedStatement.executeUpdate();
+                                                  
+                System.out.println(sql);
+            } catch (SQLException ex) {
+                Logger.getLogger(LocationDAO.class.getName()).log(Level.SEVERE, "delete failed", ex);
+            } finally {
+                try {
+                    if (preparedStatement != null) {
+                        preparedStatement.close();
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(LocationDAO.class.getName()).log(Level.SEVERE, "free resourses failed", ex);
+                }
+            }
+
+        }
     }
 
-    @Override
+   @Override
     public List<Location> findAll() {
-        return null;
-       
+        List<Location> list = new ArrayList<Location>();
+        String sql = "SELECT * FROM LOCATION";
+        Statement statement = null; 
+        ResultSet resultSet = null; 
+        
+        try {
+            statement = connection.createStatement(); 
+            resultSet = statement.executeQuery(sql);  
+            System.out.println(sql);
+            while (resultSet.next()) {
+                list.add(new Location(resultSet.getInt("IDLOCATION"),resultSet.getInt("IDCLIENT"), resultSet.getInt("IDVOITURE"), resultSet.getString("DATEDEBUT"),resultSet.getString("DATEFIN"),resultSet.getFloat("TARIF")));
+            }
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(LocationDAO.class.getName()).log(Level.SEVERE, "find all employees failed", ex);
+        } finally {            
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(LocationDAO.class.getName()).log(Level.SEVERE, "free resourses failed", ex);
+            }
+        }
+        return list;
     }
+
+    
     
 }
