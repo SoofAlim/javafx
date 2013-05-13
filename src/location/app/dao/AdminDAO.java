@@ -160,7 +160,7 @@ public class AdminDAO extends IDAO<Admin> {
 
 
         } catch (SQLException ex) {
-            Logger.getLogger(AdminDAO.class.getName()).log(Level.SEVERE, "find all employees failed", ex);
+            Logger.getLogger(AdminDAO.class.getName()).log(Level.SEVERE, "find all admin failed", ex);
         } finally {            
             try {
                 if (resultSet != null) {

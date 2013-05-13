@@ -166,7 +166,7 @@ public class VoitureDAO extends IDAO<Voiture> {
 
 
         } catch (SQLException ex) {
-            Logger.getLogger(VoitureDAO.class.getName()).log(Level.SEVERE, "find all employees failed", ex);
+            Logger.getLogger(VoitureDAO.class.getName()).log(Level.SEVERE, "find all voitures failed", ex);
         } finally {            
             try {
                 if (resultSet != null) {

@@ -28,7 +28,7 @@ public class Reservation {
     
     //constructeur paramétré
 
-    public Reservation(int idreservation,int idclient, int idvoiture, String datedebut, String datefin, float tarif) {
+    public Reservation(int idreservation,int idclient, int idvoiture, String datedebut, String datefin) {
         this.idreservation = new SimpleIntegerProperty(idreservation);
         this.idclient = new SimpleIntegerProperty(idclient);
         this.idvoiture = new SimpleIntegerProperty(idvoiture);

@@ -166,7 +166,7 @@ public class ClientDAO extends IDAO<Client> {
 
 
         } catch (SQLException ex) {
-            Logger.getLogger(ClientDAO.class.getName()).log(Level.SEVERE, "find all employees failed", ex);
+            Logger.getLogger(ClientDAO.class.getName()).log(Level.SEVERE, "find all clients failed", ex);
         } finally {            
             try {
                 if (resultSet != null) {
